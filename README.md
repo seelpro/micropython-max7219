@@ -38,6 +38,20 @@ display = max7219.Matrix8x8(spi, Pin('X5'), 8)
 display.text('12345678',0,0,1)
 display.show()
 ```
+**4x Chains of 4x 8x8 LED Matrices in sequenc**
+Where the 4 is drawn on the DIN matrix.
+
+```python
+import max7219
+from machine import Pin, SPI
+spi = SPI(1)
+display = max7219.MatrixML(spi, Pin('X5'), 4,4)
+display.text('1234',0,0,1)
+display.text('5678',0,8,1)
+display.text('90AB',0,16,1)
+display.text('CDEF',0,24,1)
+display.show()
+```
 
 **Framebuf shapes and text**
 
